@@ -48,3 +48,6 @@ Anyway, after running a GWAS, we should figure out the number of true and false 
 
 #### 4.3. Analyze results
 See how each method + hyperparameter set + PC count performed.
+
+### 5. Test Suite
+For each of these steps, we should make an effort (where feasible) to split things up into small functions that we can add tests for. This isn't very critical, but it'll be a nice thing to have. Eventually we can set up Travis for continuous integration testing, etc.
