@@ -16,10 +16,12 @@ benchmarking various dimensionality reduction methods on genotyping data.
 
 Not a comprehensive list, but we'll likely have to knock out all of these modules.
 
-### 1. Data loading
+Note that many of the notebooks linked here use filepaths specific to DataHub as it was set up in the Spring 2020 quarter. These notebooks will therefore need to be modified in order to work with arbitrary datasets, or on other systems.
+
+### 1. [Data loading](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/01-Load-Data.ipynb)
 Load genotyping data from 1000 Genomes (or another reference dataset, but probably 1000 Genomes) into a format that's easy to work with.
 
-### 2. Run dimensionality reduction
+### 2. [Run dimensionality reduction](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/02-Run-Dimensionality-Reduction.ipynb)
 Given a dataset loaded in some way, run through the full "suite" of methods + hyperparameters to test. This will produce one set of results (PCA/PCoA loadings, etc.) per method + hyperparameter set.
 
 ### 3. Evaluate dimensionality reduction results for _representing_ population stratification
