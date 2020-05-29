@@ -3,6 +3,13 @@
 This repository will hold our code for data simulation and evaluation for
 benchmarking various dimensionality reduction methods on genotyping data.
 
+## Dataset
+
+We're using genotyping data from phase 3 of the 1000 Genomes Project for benchmarking.
+To save computational resources, we're just focusing on data from chromosome 21.
+
+All told, this means that our genotyping "matrix" includes 2,504 samples and 1,099,191 SNPs.
+
 ## Dimensionality reduction methods to test
 
 | Method name | Availability | (Hyper)parameters to look into |
