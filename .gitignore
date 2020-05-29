@@ -134,3 +134,4 @@ data_note
 sample_ids.txt
 snp_ids.txt
 chr_21_genotypes.tab
+nohup.out
