@@ -1,20 +1,24 @@
 # plink-182: "Assessing PCA Alternatives for Representing and Controlling for Population Stratification"
 
+Group Members: Anubhav Singh Sachan, Marcus Fedarko
+
 This repository will hold our code for data simulation and evaluation for
 benchmarking various dimensionality reduction methods on genotyping data.
 
 ## Dataset
 
 We're using genotyping data from phase 3 of the 1000 Genomes Project for benchmarking.
-To save computational resources, we're just focusing on data from chromosome 21.
+To save computational resources, we're just focusing on data from chromosome 21.  For the sake of simplicity, we're also omitting variants that match a number of
+criteria, which are described in detail
+[here](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/01-Load-Data.ipynb#bcftools-query-options).
 
-All told, this means that our genotyping "matrix" includes 2,504 samples and 1,099,191 SNPs.
+All told, our genotyping "matrix" includes 2,504 samples and 170,073 SNPs (aka "features").
 
 ## Dimensionality reduction methods to test
 
 | Method name | Availability | (Hyper)parameters to look into |
 | --- | --- | --- |
-| PCA | scikit-learn | Normalization? |
+| PCA | scikit-learn | [Whitening](http://ufldl.stanford.edu/tutorial/unsupervised/PCAWhitening/) |
 | t-SNE | scikit-learn | [Perplexity, Epsilon, etc.](https://towardsdatascience.com/how-to-tune-hyperparameters-of-tsne-7c0596a18868) |
 | UMAP | umap-learn | [Metrics; also # Neighbors, Minimum Distance, etc.](https://umap-learn.readthedocs.io/en/latest/parameters.html)
 | PCoA | scikit-bio | [Metrics](http://scikit-bio.org/docs/latest/generated/skbio.diversity.beta_diversity.html?highlight=beta_diversity#skbio.diversity.beta_diversity) (Jaccard, Bray-Curtis, ...) |
@@ -26,10 +30,13 @@ Not a comprehensive list, but we'll likely have to knock out all of these module
 Note that many of the notebooks linked here use filepaths specific to DataHub as it was set up in the Spring 2020 quarter. These notebooks will therefore need to be modified in order to work with arbitrary datasets, or on other systems.
 
 ### 1. [Data loading](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/01-Load-Data.ipynb)
-Load genotyping data from 1000 Genomes (or another reference dataset, but probably 1000 Genomes) into a format that's easy to work with.
+Load genotyping data from 1000 Genomes from `vcf.gz` into a format that's easier
+to work with for dimensionality reduction. Also, filter out certain types of variants.
 
 ### 2. [Run dimensionality reduction](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/02-Run-Dimensionality-Reduction.ipynb)
-Given a dataset loaded in some way, run through the full "suite" of methods + hyperparameters to test. This will produce one set of results (PCA/PCoA loadings, etc.) per method + hyperparameter set.
+Given the genotyping matrix that was produced from the "Data loading" notebook,
+run it through the full "suite" of methods + hyperparameters to test.
+This will produce one set of results (PCA/PCoA loadings, etc.) per method + hyperparameter combination.
 
 ### 3. Evaluate dimensionality reduction results for _representing_ population stratification
 
@@ -57,5 +64,5 @@ Anyway, after running a GWAS, we should figure out the number of true and false 
 #### 4.3. Analyze results
 See how each method + hyperparameter set + PC count performed.
 
-### 5. Test Suite
+### 5. Test Suite (we may not have time for this)
 For each of these steps, we should make an effort (where feasible) to split things up into small functions that we can add tests for. This isn't very critical, but it'll be a nice thing to have. Eventually we can set up Travis for continuous integration testing, etc.
