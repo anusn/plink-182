@@ -8,11 +8,21 @@ benchmarking various dimensionality reduction methods on genotyping data.
 ## Dataset
 
 We're using genotyping data from phase 3 of the 1000 Genomes Project for benchmarking.
-To save computational resources, we're just focusing on data from chromosome 21.  For the sake of simplicity, we're also omitting variants that match a number of
+To save computational resources, we're just focusing on data from chromosome 21.
+For the sake of simplicity, we're also omitting variants that match a number of
 criteria, which are described in detail
 [here](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/01-Load-Data.ipynb#bcftools-query-options).
 
 All told, our genotyping "matrix" includes 2,504 samples and 170,073 SNPs (aka "features").
+
+### Data files included in this repository
+
+Some of the data files used / generated in the notebooks in this repository are
+not actually included in this repository, due to being prohibitively large (this includes
+the initial `vcf.gz` file, the filtered `vcf.gz` file with just the SNPs we're using, and
+the genotyping matrix file). Once this notebook is cloned to a home directory on UCSD's
+[DataHub](http://datahub.ucsd.edu/) site, rerunning the first notebook (01-Load-Data.ipynb) should
+generate all of the necessary files.
 
 ## Dimensionality reduction methods to test
 
@@ -27,7 +37,9 @@ All told, our genotyping "matrix" includes 2,504 samples and 170,073 SNPs (aka "
 
 Not a comprehensive list, but we'll likely have to knock out all of these modules.
 
-Note that many of the notebooks linked here use filepaths specific to DataHub as it was set up in the Spring 2020 quarter. These notebooks will therefore need to be modified in order to work with arbitrary datasets, or on other systems.
+Note that, as mentioned above, many of the notebooks linked here use filepaths specific to
+UCSD's DataHub site as it was set up in the Spring 2020 quarter. These notebooks will
+therefore need to be modified in order to work with arbitrary datasets, or on other systems.
 
 ### 1. [Data loading](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/01-Load-Data.ipynb)
 Load genotyping data from 1000 Genomes from `vcf.gz` into a format that's easier
