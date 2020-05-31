@@ -131,7 +131,6 @@ dmypy.json
 # project-specific stuff (large files, etc.)
 data_note
 20130606_g1k.ped
-sample_ids.txt
-snp_ids.txt
 chr_21_genotypes.tab
+data/*.vcf.gz
 nohup.out
