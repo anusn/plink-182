@@ -38,9 +38,9 @@ Genomes Project website.
 | Method name | Availability | (Hyper)parameters to look into |
 | --- | --- | --- |
 | PCA | scikit-learn | [Whitening](http://ufldl.stanford.edu/tutorial/unsupervised/PCAWhitening/) |
-| t-SNE | scikit-learn | [Metrics, Perplexity, Epsilon, etc.](https://towardsdatascience.com/how-to-tune-hyperparameters-of-tsne-7c0596a18868) |
-| UMAP | umap-learn | [Metrics; also # Neighbors, Minimum Distance, etc.](https://umap-learn.readthedocs.io/en/latest/parameters.html)
 | PCoA | scikit-bio | [Metrics](http://scikit-bio.org/docs/latest/generated/skbio.diversity.beta_diversity.html?highlight=beta_diversity#skbio.diversity.beta_diversity) (Jaccard, Bray-Curtis, ...) |
+| t-SNE | scikit-learn | [Metrics, Perplexity, Epsilon, etc.](https://towardsdatascience.com/how-to-tune-hyperparameters-of-tsne-7c0596a18868) |
+| UMAP | umap-learn | [Metrics, # Neighbors, Minimum Distance, etc.](https://umap-learn.readthedocs.io/en/latest/parameters.html)
 
 ## Software components
 
@@ -57,7 +57,7 @@ to work with for dimensionality reduction. Also, filter out certain types of var
 ### 2. [Run dimensionality reduction](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/02-Run-Dimensionality-Reduction.ipynb)
 Given the genotyping matrix that was produced from the "Data loading" notebook,
 run it through the full "suite" of methods + hyperparameters to test.
-This will produce one set of results (PCA/PCoA loadings, etc.) per method + hyperparameter combination.
+This will produce one set of results (sample coordinates) per method + hyperparameter combination.
 
 ### 3. [Evaluate dimensionality reduction results for _representing_ population stratification](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/03-Evaluate-Representation.ipynb)
 
