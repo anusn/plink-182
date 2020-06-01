@@ -7,7 +7,8 @@ benchmarking various dimensionality reduction methods on genotyping data.
 
 ## Dataset
 
-We're using genotyping data from phase 3 of the 1000 Genomes Project for benchmarking.
+We're using genotyping data from phase 3 of the
+[1000 Genomes Project](https://www.internationalgenome.org/) for benchmarking.
 To save computational resources, we're just focusing on data from chromosome 21.
 For the sake of simplicity, we're also omitting variants that match a number of
 criteria, which are described in detail
@@ -15,14 +16,22 @@ criteria, which are described in detail
 
 All told, our genotyping "matrix" includes 2,504 samples and 170,073 SNPs (aka "features").
 
-### Data files included in this repository
+### Re: data files included / not included in this repository
 
 Some of the data files used / generated in the notebooks in this repository are
 not actually included in this repository, due to being prohibitively large (this includes
 the initial `vcf.gz` file, the filtered `vcf.gz` file with just the SNPs we're using, and
 the genotyping matrix file). Once this notebook is cloned to a home directory on UCSD's
-[DataHub](http://datahub.ucsd.edu/) site, rerunning the first notebook (01-Load-Data.ipynb) should
+[DataHub](http://datahub.ucsd.edu/) site, rerunning the first notebook (`01-Load-Data.ipynb`) should
 generate all of the necessary files.
+
+### Data acknowledgements
+
+As mentioned above, the data we used is from phase 3 of the 1000 Genomes Project.
+
+`data/pop_to_superpop.tsv` was copied directly from
+[this page](https://www.internationalgenome.org/faq/which-populations-are-part-your-study/) of the 1000
+Genomes Project website.
 
 ## Dimensionality reduction methods to test
 
