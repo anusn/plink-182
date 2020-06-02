@@ -60,14 +60,12 @@ run it through the full "suite" of methods + hyperparameters to test.
 This will produce one set of results (sample coordinates) per method + hyperparameter combination.
 
 ### 3. [Evaluate dimensionality reduction results for _representing_ population stratification](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/03-Evaluate-Representation.ipynb)
+Given the 2D visualization produced by each dimensionality reduction method + hyperparameter
+combination, use HBDSCAN\* to see how samples in this space "cluster" -- and evaluate how similar
+these clusters are to the "ground truth" superpopulations.
 
-#### 3.1. Compute objective score
-Given the ordination space, use some sort of objective score / other magic to figure out how close together related samples are in the space -- the closer samples from similar populations are, the better. (There is likely a lot of wiggle room for ways this could be done, so it may be worth trying out different objective functions.)
-
-Anyway, this should give us an easier "result" (just a single score or something) for each method + hyperparameter set. For now we can just output these results to a file or something -- eventually we'll want to plot them in various ways, etc.
-
-#### 3.2. Analyze results
-See how each method + hyperparameter set performed.
+Probably it would be easiest to just get a list / barplot / etc. showing how the various method +
+hyperparameter combinations all perform.
 
 ### 4. Evaluate dimensionality reduction results for _controlling for_ population stratification
 This is going to be the more involved of the two evaluation steps, probably.
