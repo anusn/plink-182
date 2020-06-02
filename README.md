@@ -59,7 +59,7 @@ Given the genotyping matrix that was produced from the "Data loading" notebook,
 run it through the full "suite" of methods + hyperparameters to test.
 This will produce one set of results (sample coordinates) per method + hyperparameter combination.
 
-### 2.5. [Convert dimensionality reduction results to plink's `.cov` format](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/02.5-Convert-DR-Outputs-To-Plink-Format.ipynb)
+#### 2.5. [Convert dimensionality reduction results to plink's `.cov` format](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/02.5-Convert-DR-Outputs-To-Plink-Format.ipynb)
 Just a small step that will help with the GWAS work later.
 
 ### 3. [Evaluate dimensionality reduction results for _representing_ population stratification](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/notebooks/03-Evaluate-Representation.ipynb)
