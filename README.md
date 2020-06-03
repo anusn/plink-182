@@ -71,20 +71,10 @@ Probably it would be easiest to just get a list / barplot / etc. showing how the
 hyperparameter combinations all perform.
 
 ### 4. Evaluate dimensionality reduction results for _controlling for_ population stratification
-This is going to be the more involved of the two evaluation steps, probably.
 
-#### 4.1. Simulate phenotype data
-Use GCTA / HAPGEN2 / etc.
+#### 4.1. [Simulate phenotype data](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/GWASminiProject/1.%20PhenotypeSimulation.ipynb)
 
-#### 4.2. Run GWASs on the simulated phenotypes using the dimensionality reduction results as covariates
-Using plink, probably (hence the project name :)
+#### 4.2. [Run GWASs on the simulated phenotypes using plink, with some of the dimensionality reduction results as covariates](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/GWASminiProject/2.%20plink%20runs.ipynb)
 
-We will probably want to run multiple GWASs per method + hyperparameter set -- so that we can use different amounts of PCs and see how this impacts the GWASs. Something like the top 1, 2, 5, 10, 15 PCs (I dunno) might be good. If possible, using EIGENSOFT to figure out a "statistically significant" number of PCs and using that number here would be interesting.
-
-Anyway, after running a GWAS, we should figure out the number of true and false hits. We should output these to a file or something, or otherwise store them somewhere.
-
-#### 4.3. Analyze results
-See how each method + hyperparameter set + PC count performed.
-
-### 5. Test Suite (we may not have time for this)
-For each of these steps, we should make an effort (where feasible) to split things up into small functions that we can add tests for. This isn't very critical, but it'll be a nice thing to have. Eventually we can set up Travis for continuous integration testing, etc.
+#### 4.3. [Create Manhattan and QQ plots for the GWASs](https://nbviewer.jupyter.org/github/fedarko/plink-182/blob/master/GWASminiProject/3.%20Create%20Plots.ipynb)
+This helps us see how each method + hyperparameter set + PC count performed.
