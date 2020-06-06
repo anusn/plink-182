@@ -40,15 +40,15 @@ generate all of the necessary files. (You may need to rerun
 
 ## What the directories in this repository contain
 
-- `notebooks`: This directory contains a set of Jupyter Notebooks that perform steps 1, 2, 2.5, and 3 in the "Software Components" section below.
-- `GWASminiProject`: This directory contains a set of Jupyter Notebooks that perform steps 4.1, 4.2, and 4.3 in the "Software Components" section below. It also contains some additional files produced in the course of running these notebooks.
-- `data`: This directory contains some (but not all) of the data files generated in the `Data loading` and `GWASminiProject` notebooks.
+- **`notebooks`:** This directory contains a set of Jupyter Notebooks that perform steps 1, 2, 2.5, and 3 in the "Software Components" section below.
+- **`GWASminiProject`:** This directory contains a set of Jupyter Notebooks that perform steps 4.1, 4.2, and 4.3 in the "Software Components" section below. It also contains some additional files produced in the course of running these notebooks.
+- **`data`:** This directory contains some (but not all) of the data files generated in the `Data loading` and `GWASminiProject` notebooks.
   - It also contains `data/pop_to_superpop.tsv`, a simple TSV file which was copied directly from
 [this page](https://www.internationalgenome.org/faq/which-populations-are-part-your-study/) of the 1000
 Genomes Project website.
-- `dr_outputs`: This directory contains files describing the sample "coordinates" for all of the dimensionality reduction method + hyperparameter combinations run. Each file should be loadable using [`numpy.loadtxt()`](https://numpy.org/doc/1.18/reference/generated/numpy.loadtxt.html) -- rows indicate samples (in the same order as in `data/sample_ids.txt`), and columns indicate axes / PCs in the reduced dataset (for PCA and PCoA, these columns are in descending order of the proportion of variance explained: so the first column is PC 1, the second is PC 2, etc.).
-- `cov_dr_outputs`: This directory contains versions of the files in `dr_outputs` represented in plink's `.cov` format.
-- `dr_output_visualizations`: This directory contains visualizations of many of the UMAP `dr_outputs` files. It also contains a short script, [`make_umap_gifs.py`](https://github.com/fedarko/plink-182/blob/master/dr_output_visualizations/make_umap_gifs.py), which uses [ImageMagick](https://imagemagick.org/index.php)'s command-line interface to create animated GIFs of the UMAP results (showing how increasing the `n_neighbors` parameter changes a UMAP visualization, given a constant `metric` and `min_dist` parameter).
+- **`dr_outputs`:** This directory contains files describing the sample "coordinates" for all of the dimensionality reduction method + hyperparameter combinations run. Each file should be loadable using [`numpy.loadtxt()`](https://numpy.org/doc/1.18/reference/generated/numpy.loadtxt.html) -- rows indicate samples (in the same order as in `data/sample_ids.txt`), and columns indicate axes / PCs in the reduced dataset (for PCA and PCoA, these columns are in descending order of the proportion of variance explained: so the first column is PC 1, the second is PC 2, etc.).
+- **`cov_dr_outputs`**: This directory contains versions of the files in `dr_outputs` represented in plink's `.cov` format.
+- **`dr_output_visualizations`**: This directory contains visualizations of many of the UMAP `dr_outputs` files. It also contains a short script, [`make_umap_gifs.py`](https://github.com/fedarko/plink-182/blob/master/dr_output_visualizations/make_umap_gifs.py), which uses [ImageMagick](https://imagemagick.org/index.php)'s command-line interface to create animated GIFs of the UMAP results (showing how increasing the `n_neighbors` parameter changes a UMAP visualization, given a constant `metric` and `min_dist` parameter).
   - Visualizations of the non-UMAP DR methods (PCA, PCoA, t-SNE) are rendered in notebook 2, described below.
 
 ## Software components
