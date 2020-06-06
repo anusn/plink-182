@@ -2,7 +2,7 @@
 
 Group Members: Anubhav Singh Sachan, Marcus Fedarko
 
-This repository will hold our code for data simulation and evaluation for
+This repository holds our code for data simulation and evaluation for
 benchmarking various dimensionality reduction methods on genotyping data.
 
 (Note: in the process of doing merging, the git history got messed up a bit -- a lot of commits got duplicated in the history for some reason. So it's closer to 50 total commits than 100 :)
